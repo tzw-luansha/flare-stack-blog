@@ -1,7 +1,7 @@
 {
   "$schema": "node_modules/wrangler/config-schema.json",
-  "name": "flare-stack-blog",
-  "compatibility_date": "2026-06-21",
+  "name": "my-blog",
+  "compatibility_date": "2026-02-17",
   "compatibility_flags": ["nodejs_compat", "global_fetch_strictly_public"],
   "main": "./src/server.ts",
   "observability": {
@@ -10,21 +10,21 @@
   "keep_vars": true,
   "routes": [
     {
-      "pattern": "blog.tzwls.cc",
+      "pattern": "DOMAIN_PLACEHOLDER",
       "custom_domain": true
     }
   ],
   "d1_databases": [
     {
       "binding": "DB",
-      "database_id": "32496e07-1537-42d5-bfa1-4258edf045af",
+      "database_id": "D1_DATABASE_ID",
       "migrations_dir": "migrations",
       "remote": true
     }
   ],
   "r2_buckets": [
     {
-      "bucket_name": "my-blog-images",
+      "bucket_name": "bucket-name-placeholder",
       "binding": "R2",
       "remote": true
     }
@@ -32,12 +32,12 @@
   "kv_namespaces": [
     {
       "binding": "KV",
-      "id": "063142be5e6747ee8f86f66857f7b546",
+      "id": "KV_NAMESPACE_ID",
       "remote": true
     },
     {
       "binding": "OAUTH_KV",
-      "id": "9107b1815abf9baab74d6c833fcb7943",
+      "id": "KV_NAMESPACE_ID",
       "remote": true
     }
   ],
