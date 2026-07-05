@@ -8,9 +8,9 @@ import { ContentRenderer } from "@/features/theme/themes/glass/components/conten
 import { authClient } from "@/lib/auth/auth.client";
 import { formatDate } from "@/lib/utils";
 import { m } from "@/paraglide/messages";
-import { RelatedPosts, RelatedPostsSkeleton } from "../components/related-posts";
-import { TableOfContents } from "../components/table-of-contents";
-import { CommentSection } from "../components/comments/view/comment-section";
+import { RelatedPosts, RelatedPostsSkeleton } from "./components/related-posts";
+import { TableOfContents } from "./components/table-of-contents";
+import { CommentSection } from "../../components/comments/view/comment-section";
 
 function ClientOnly({
   children,
