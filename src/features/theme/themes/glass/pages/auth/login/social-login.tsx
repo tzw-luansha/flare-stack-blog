@@ -1,4 +1,4 @@
-import { Github } from "lucide-react";
+import { GithubIcon } from "@/components/common/brand-icon";
 import { m } from "@/paraglide/messages";
 
 interface SocialLoginProps {
@@ -30,7 +30,7 @@ export function SocialLogin({
         disabled={isLoading}
         className="glass-btn w-full justify-center gap-3 tracking-wider text-[11px] font-mono disabled:opacity-30"
       >
-        <Github size={16} strokeWidth={1.5} />
+        <GithubIcon size={16} />
         <span>{m.login_github()}</span>
       </button>
     </div>
