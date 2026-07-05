@@ -132,6 +132,11 @@ export function resolveSiteConfig(
           config?.site?.theme?.fuwari?.primaryHue ??
           blogConfig.theme.fuwari.primaryHue,
       },
+      glass: {
+        accentHue:
+          config?.site?.theme?.glass?.accentHue ??
+          blogConfig.theme.glass.accentHue,
+      },
     },
   });
 }
