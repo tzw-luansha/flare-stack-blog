@@ -1,12 +1,12 @@
 import type { SiteConfig } from "@/features/config/site-config.schema";
 
 export const blogConfig = {
-  title: "站点名称",
-  author: "作者",
+  title: "阿伟的个人博客",
+  author: "冷酷的阿伟",
   description:
     "这是我的个人网站和博客。在这里，我主要分享与技术和生活相关的内容。欢迎阅读！",
   social: [
-    { platform: "github", url: "https://github.com/example" },
+    { platform: "github", url: "https://github.com/tzw-luansha" },
     { platform: "email", url: "mailto:example@email.com" },
     { platform: "rss", url: "/rss.xml" },
   ],
@@ -26,6 +26,9 @@ export const blogConfig = {
       homeBg: "/images/home-bg.webp",
       avatar: "/images/avatar.png",
       primaryHue: 250,
+    },
+    glass: {
+      accentHue: 250,
     },
   },
 } as const satisfies SiteConfig;

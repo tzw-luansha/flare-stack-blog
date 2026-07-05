@@ -282,6 +282,28 @@ export const fuwariThemeSiteConfigSchema = createFuwariThemeSiteConfigSchema();
 export const fuwariThemeSiteConfigInputSchema =
   createFuwariThemeSiteConfigInputSchema();
 
+function createGlassThemeSiteConfigSchema() {
+  return z.object({
+    accentHue: createHueSchema(),
+  });
+}
+
+function createGlassThemeSiteConfigInputSchema() {
+  return z.object({
+    accentHue: createHueSchema().optional(),
+  });
+}
+
+function createGlassThemeSiteConfigInputFormSchema(messages: Messages) {
+  return z.object({
+    accentHue: createHueFormSchema(messages).optional(),
+  });
+}
+
+export const glassThemeSiteConfigSchema = createGlassThemeSiteConfigSchema();
+export const glassThemeSiteConfigInputSchema =
+  createGlassThemeSiteConfigInputSchema();
+
 export const FullSiteConfigSchema = z.object({
   title: createSiteTextSchema(120),
   author: createSiteTextSchema(80),
@@ -298,6 +320,7 @@ export const FullSiteConfigSchema = z.object({
   theme: z.object({
     default: defaultThemeSiteConfigSchema,
     fuwari: fuwariThemeSiteConfigSchema,
+    glass: glassThemeSiteConfigSchema,
   }),
 });
 
@@ -322,6 +345,7 @@ export function createSiteConfigInputFormSchema(messages: Messages) {
         default:
           createDefaultThemeSiteConfigInputFormSchema(messages).optional(),
         fuwari: createFuwariThemeSiteConfigInputFormSchema(messages).optional(),
+        glass: createGlassThemeSiteConfigInputFormSchema(messages).optional(),
       })
       .optional(),
   });
@@ -346,6 +370,7 @@ export const SiteConfigInputSchema = z.object({
     .object({
       default: defaultThemeSiteConfigInputSchema.optional(),
       fuwari: fuwariThemeSiteConfigInputSchema.optional(),
+      glass: glassThemeSiteConfigInputSchema.optional(),
     })
     .optional(),
 });
@@ -364,6 +389,10 @@ export type DefaultThemeSiteConfigInput = z.infer<
 export type FuwariThemeSiteConfig = z.infer<typeof fuwariThemeSiteConfigSchema>;
 export type FuwariThemeSiteConfigInput = z.infer<
   typeof fuwariThemeSiteConfigInputSchema
+>;
+export type GlassThemeSiteConfig = z.infer<typeof glassThemeSiteConfigSchema>;
+export type GlassThemeSiteConfigInput = z.infer<
+  typeof glassThemeSiteConfigInputSchema
 >;
 export type SiteConfig = z.infer<typeof FullSiteConfigSchema>;
 export type SiteConfigInput = z.infer<typeof SiteConfigInputSchema>;
