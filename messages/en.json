@@ -1,5 +1,6 @@
 {
   "$schema": "https://inlang.com/schema/inlang-message-format",
+  "common_close_menu": "Close Menu",
   "nav_home": "Home",
   "nav_posts": "Posts",
   "nav_friend_links": "Links",
