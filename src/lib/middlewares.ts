@@ -65,6 +65,16 @@ export const sessionMiddleware = createMiddleware({ type: "function" })
       headers: getRequestHeaders(),
     });
 
+    // Dynamically grant admin role if the user's email matches ADMIN_EMAIL,
+    // regardless of what's stored in the database (handles existing users
+    // who were created before ADMIN_EMAIL was set).
+    if (session?.user) {
+      const { ADMIN_EMAIL } = serverEnv(context.env);
+      if (session.user.email === ADMIN_EMAIL) {
+        session.user.role = "admin";
+      }
+    }
+
     return next({
       context: {
         auth,
